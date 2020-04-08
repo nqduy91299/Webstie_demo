@@ -1,0 +1,266 @@
+:root{
+	--logoColor: #ffe266;
+	--beachColor: #51ACF7;
+	--orangeColor: #FF5B00;
+	--waterColor: #A3D6FF;
+}
+
+*{
+    box-sizing: border-box
+}
+
+html{
+	font-family: 'Baloo Thambi 2', cursive;
+	box-sizing: border-box;
+    font-size: 22px;
+    margin: 0;  
+}
+
+.container__brandBG{
+    background: #56CCF2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container_brand{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.brand{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: bold;
+    letter-spacing: 5px;
+	border: 10px solid var(--logoColor);
+    color: var(--logoColor) !important;
+    text-align: center;
+}
+
+
+.navbar-custom{
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--logoColor) !important;
+}
+
+.nav-item.active{
+    opacity: 0.6;
+}
+
+
+.nav-link{
+	font-weight: 600;
+	color: black !important;
+    margin: 0 10px 0 10px !important;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.nav-link::after{
+	content: '' ;
+	display: block !important;
+	width: 0 !important;
+	height: 2px !important;
+	background: black !important;
+	transition: width .3s !important;
+}
+
+.nav-link:hover::after{
+	width: 100% !important;
+}
+
+
+
+.img__{
+    border-radius: 10px;
+    height: auto;
+    width: 100%;
+}
+
+
+.tab {
+    width: 100%;
+}
+  
+.tab button {
+    display: block;
+    color: black;
+    padding: 22px 10px;
+    width: 100%;
+    border: 1px solid #0000004d;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    color: black;
+    background: white;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+  
+
+/* About Us AND RULES */
+
+.tab button:hover {
+    background-color: var(--waterColor);
+}
+  
+.tab button.active {
+    background-color: var(--waterColor);
+}
+  
+.tabcontent {
+    padding: 0px 12px;
+}
+
+.tabcontent h1{
+    margin-bottom: 30px;
+}
+
+.tabcontent p{
+    font-weight: 300;
+}
+
+.tabcontent ol li{
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.tabcontent ul li{
+    font-weight: 300;
+}
+
+
+.container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+
+/* FAQs */
+
+.card-header{
+    background: white;
+    border: none;
+}
+
+.tabcontent button i{
+    margin-right: 10px;
+}
+
+.card-header button{
+    color: black;
+}
+
+
+
+.card-header button:hover{
+    color: var(--waterColor);
+}
+
+.card-body{
+    font-weight: 300;
+}
+
+.card-body strong {
+    color: var(--beachColor);
+}
+
+
+/* FOOTER */
+.superContainer__footer{
+	padding-top: 50px;
+	background-color: var(--waterColor);
+}
+
+.footer__contact{
+	padding-left: 0;
+}
+
+.footer-title{
+	text-transform: uppercase;
+	padding: 15px;
+	border-left: 3px solid var(--logoColor);
+}
+
+.link{
+	width: 100%;
+	
+}
+
+.listgroup-link{
+	padding: 0 !important; 
+	
+}
+
+.link-item{
+	width: 90% !important;
+	padding-left: 0 !important;
+	
+	background:transparent;
+}
+
+.link-item a{
+	font-size: 16px;
+	text-decoration: none;
+	color: black;
+	font-weight: 400;
+}
+
+.link-item a:hover{
+	color: var(--logoColor);
+}
+
+.icon-area{
+	width: 100%;
+	justify-items: center;
+}
+
+.icon-area a{
+	margin: 0 20px 0 20px;
+	color: var(--beachColor);
+	text-decoration: none;
+}
+
+.icon-area a:hover{
+	color: var(--logoColor);
+}
+.contact-item{
+	color: var(--beachColor);
+	display: flex;
+}
+
+
+.footer__row-copyright{
+	color: var(--orangeColor);
+	font-weight: 200;
+	padding-top: 10px;
+}
+
+
+.container__askeme{
+    background: var(--logoColor);
+}
+
+.btn-askme{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-askme button{
+    color: black;
+    background:white;
+    outline: none;
+}
+
+.btn-askme button:hover{
+    background: var(--waterColor);
+}
