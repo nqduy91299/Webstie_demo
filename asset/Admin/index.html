@@ -4,8 +4,266 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+
+    <!--icon-->
+    <link rel="shortcut icon" type="icon" href="../img/icon-hotel.png">
+    
+
+     <!--Bootstrap 4-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+     <!-- Font Awesome -->
+    <link rel="stylesheet" href="../fonts/fontawesome-free-5.13.0-web/css/all.css">
+    
+     <!-- CSS -->
+     <link rel="stylesheet" href="../css/main-admin.css">
+
+    <!--font familly-->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm  navbar-light bg-light" id="navbar">
+        <a class="navbar-brand" href="#">THE PIRATES</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Log out</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- CONTENT -->
+    <div class="container-fluis">
+        <div style="margin: 0;" class="row">
+            <div style="padding: 0; height: 100%;" class="col-lg-2">
+                <div class="tab">
+                    <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Rooms')">Rooms</button>
+                    <button class="tablinks" onclick="openTab(event, 'Booking')">Booking</button>
+                    <button class="tablinks" onclick="openTab(event, 'Statistical')">Statistical</button>
+                    <button class="tablinks" onclick="openTab(event, 'Promotions')">Promotions</button>
+                    <button class="tablinks" onclick="openTab(event, 'Accounts')">Accounts</button>
+                </div>
+            </div>
+            <div style="padding: 0;" class="col-lg-10">
+                <div class="main-contain">
+
+                    <!-- TAB ROOMS -->
+                    <div id="Rooms" class="tabcontent">
+                        <h1 class="text-center">Rooom Management</h1>
+                        <hr>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-success"><i class="fas fa-home"></i><br>Add a new room</button>
+                        </div>
+                        <div class="table-content">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                  <tr>
+                                    <th cope="col">Name</th>
+                                    <th cope="col">Price ($)</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="item">
+                                        <td>R-001</td>
+                                        <td>90</td>
+                                        <td>@ sad d dasd adsdsa dasdasdasdas as dsa sasdasdasddsao</td>
+                                        <td>
+                                            <a href="#"><i class="fas fa-cog config-items"></i></a>
+                                            <span style="text-align: center;">|</span>
+                                            <a href="#"><i class="fas fa-plus"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="item">
+                                        <td>R-002</td>
+                                        <td>95</td>
+                                        <td>@ sad dasfsa s a sa fasfsa s asa dasdasdas as dsa sasdasdasddsao</td>
+                                        <td>
+                                            <a href="#"><i class="fas fa-cog config-items"></i></a>
+                                            <span style="text-align: center;">|</span>
+                                            <a href="#"><i class="fas fa-plus"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- TAB BOOKING -->
+                    <div id="Booking" class="tabcontent">
+                        <h1 class="text-center">Booking Management</h1>
+                        <hr>
+                        <div class="table-content">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                  <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email ($)</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Current Room</th>
+                                    <th scope="col">Nor </th>
+                                    <th scope="col">Check in</th>
+                                    <th scope="col">Check out</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="item">
+                                        <td>Nguyen Quoc Duy</td>
+                                        <td>ngcduy91299@gmail.com</td>
+                                        <td>0254125896</td>
+                                        <td>R-001</td>
+                                        <td>1</td>
+                                        <td>12/3/2020</td>
+                                        <td>13/3/2020</td>
+                                        <td>
+                                            <a href="#"><i class="fas fa-cog config-items"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="item">
+                                        <td>Nguyen Quoc Huy</td>
+                                        <td>ngcsdy91299@gmail.com</td>
+                                        <td>0212125896</td>
+                                        <td>R-002</td>
+                                        <td>1</td>
+                                        <td>13/3/2020</td>
+                                        <td>14/3/2020</td>
+                                        <td>
+                                            <a href="#"><i class="fas fa-cog config-items"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+
+                    <!-- TAB STATISTICAL -->
+                    <div id="Statistical" class="tabcontent">
+                        <h1 class="text-center">Statistical Management</h1>
+                        <hr>
+
+                        <div class="table-content">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                  <tr>
+                                    <th scope="col">Total Booking</th>
+                                    <th scope="col">Total Money ($)</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="item">
+                                        <td>2</td>
+                                        <td>250</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <!-- TAB PROMOTIONS -->
+                    <div id="Promotions" class="tabcontent">
+                        <h1 class="text-center">Promotion Management</h1>
+                        <hr>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-success"><i class="fas fa-tags"></i><br>Add a new discount</button>
+                        </div>
+
+                        <div class="table-content">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                  <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Discount</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="item">
+                                        <td>P-001</td>
+                                        <td>20%</td>
+                                        <td>la la al al al al a la abla bla bla lba bal lab abl abla lb</td>
+                                        <td>
+                                            <a href="#"><i class="fas fa-trash delete-items"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="item">
+                                        <td>P-002</td>
+                                        <td>10%</td>
+                                        <td>la la al al al al a la abla bla bla lba bal lab abl abla lb</td>
+                                        <td>
+                                            <a href="#"><i class="fas fa-trash delete-items"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="Accounts" class="tabcontent">
+                        <h1 class="text-center">Account Management</h1>
+                        <hr>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-success"><i class="fas fa-user-plus"></i><br>Add a new account</button>
+                        </div>
+
+                        <div class="table-content">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                  <tr>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="item">
+                                        <td>Admin</td>
+                                        <td>Nguyen Quoc Duy</td>
+                                        <td>ngcduy91299@gmail.com</td>
+                                        <td>0254125896</td>
+                                        <td>
+                                            <a href="#"><i class="fas fa-trash delete-items"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="item">
+                                        <td>Customer</td>
+                                        <td>Nguyen Quoc Huy</td>
+                                        <td>ngcsdy91299@gmail.com</td>
+                                        <td>0212125896</td>
+                                        <td>
+                                            <a href="#"><i class="fas fa-trash delete-items"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
     
+    
+    
+
+    <script src="../js/main-admin.js"></script>
 </body>
 </html>

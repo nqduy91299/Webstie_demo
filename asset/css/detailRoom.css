@@ -1,0 +1,114 @@
+:root{
+	--logoColor: #ffe266;
+	--beachColor: #51ACF7;
+	--orangeColor: #FF5B00;
+	--waterColor: #A3D6FF;
+}
+
+*{
+    box-sizing: border-box
+}
+
+html{
+	font-family: 'Baloo Thambi 2', cursive;
+	box-sizing: border-box;
+    font-size: 20px;
+    margin: 0;  
+}
+
+.navbar-custom{
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--logoColor) !important;
+}
+
+.nav-item .active{
+    opacity: 0.6;
+}
+
+
+.nav-link{
+	font-weight: 600;
+	color: black !important;
+    margin: 0 10px 0 10px !important;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.nav-link::after{
+	content: '' ;
+	display: block !important;
+	width: 0 !important;
+	height: 2px !important;
+	background: black !important;
+	transition: width .3s !important;
+}
+
+.nav-link:hover::after{
+	width: 100% !important;
+}
+
+.first-row{
+    padding-top: 20px;
+}
+
+.room-name{
+    margin-top: 10px;
+    padding: 15px 20px;
+}
+
+.room-name h2{
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.room-name img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.book-this-room{
+    margin-top: 10px;
+    padding: 15px 15px 0;
+}
+
+.book-this-room button{
+    padding: 10px;
+    outline: none;
+    background: var(--beachColor);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 100%;;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.book-this-room button:hover{
+    background: var(--logoColor);
+    color: black;
+}
+
+.book-this-room p{
+    margin-bottom: 5px;
+}
+
+.book-this-room ul{
+    list-style-type: none;
+}
+
+.desc_title{
+    font-weight: 900;
+     letter-spacing: 4px;
+}
+
+#description{
+    font-weight: 200;
+}
+
+

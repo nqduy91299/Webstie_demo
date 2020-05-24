@@ -1,0 +1,60 @@
+:root{
+	--logoColor: #ffe266;
+	--beachColor: #51ACF7;
+	--orangeColor: #FF5B00;
+	--waterColor: #A3D6FF;
+}
+
+
+
+html{
+	font-family: 'Baloo Thambi 2', cursive;
+	box-sizing: border-box;
+    font-size: 18px;
+    height: 100%;
+}
+
+body{
+	background: #f1f1f1;
+}
+
+.form-add-new-room{
+	margin-top: 40px !important;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 20px 10px;
+	background: white;
+}
+
+.form-add-new-room br{
+	margin-bottom: 20px !important;
+}
+
+.form-add-new-room input, textarea{
+	width: 100%;
+}
+
+.form-add-new-room select{
+	width: 50%;
+}
+
+
+.text-center{
+	text-align: center;
+}
+
+.button{
+	text-align: end;
+}
+
+.button a{
+	border: 1px solid black;
+	padding: 15px 30px;
+	text-decoration: none;
+	background: var(--logoColor);
+	color: black;
+}
+
+.button a:hover{
+	opacity: 0.8;
+}
