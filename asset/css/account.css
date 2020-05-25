@@ -1,0 +1,100 @@
+:root{
+	--logoColor: #ffe266;
+	--beachColor: #51ACF7;
+	--orangeColor: #FF5B00;
+	--waterColor: #A3D6FF;
+}
+
+html{
+	font-family: 'Baloo Thambi 2', cursive;
+	box-sizing: border-box;
+    font-size: 20px;
+}
+
+body{
+    background-color: #8BC6EC;
+background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+
+
+
+/* NAVBAR ###########################################3*/
+.navbar{
+	background: transparent !important;
+	transition: top 0.3s;
+}
+
+.navbar.active{
+	background-color: var(--beachColor) !important;
+}
+
+.navbar-brand{
+	padding: 0 5px 0 5px;
+	font-weight: bold;
+	letter-spacing: 5px;
+	border: 5px solid var(--logoColor);
+	color: var(--logoColor) !important;
+}
+
+.navbar li{
+	letter-spacing: 2px ;
+}
+
+.nav-link{
+	font-weight: 600;
+	color: white !important;
+	margin: 0 10px 0 10px !important;
+}
+
+.nav-link::after{
+	content: '' ;
+	display: block !important;
+	width: 0 !important;
+	height: 2px !important;
+	background: yellow !important;
+	transition: width .3s !important;
+}
+
+.nav-link:hover::after{
+	width: 100% !important;
+}
+
+.nav-link:hover{
+	color: yellow !important;
+}
+
+.account_infor, .booking-history{
+    padding: 20px;
+}
+
+.btn-logout{
+    background: transparent;
+    border: 1px solid var(--logoColor);
+    transition: ease 0.5s;
+}
+
+.btn-logout:hover{
+    background-color: #ffe266;
+}
+
+.infor{
+    display: flex;
+}
+
+.infor span {
+    margin-left: 20px;
+}
+
+
+
+

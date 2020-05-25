@@ -6,7 +6,7 @@
   - Index(HomePage - ✔ đầu tiên là hoàn thành, ✔ thứ hai là responsive):
     + Navbar ✔✔
     + Home :
-      + Form 
+      + Form ✔✔
     + About Us ✔✔
     + Rooms ✔✔
     + Contacts ✔✔
@@ -14,15 +14,9 @@
     + Picture carousal ✔✔
     + Footer ✔✔
 
-  - Show rooms 
+  - Show rooms ✔✔
 
-  - Single room (Detail)
-  
-  - Deluxe room (Detail)
-  
-  - Family room (Detail)
-  
-  - President room (Detail)
+  - room (Detail) ✔✔
     
   - About Us:
     + Information ✔✔
@@ -30,7 +24,7 @@
     + Rules ✔✔
     + Booking Rules ✔✔
 
-  - Promotions
+  - Promotions ✔✔
     
   - Account (not logged in):
     + Login ✔✔
@@ -39,22 +33,15 @@
   - Account (logged)
 
 - ## Admin
-  - Home page:
-    + Booking management
-    + Rooms management
-    + Accounts management
-    + Offers management
-    + Income statistics
+  - Booking management ✔✔
   
-  - Booking management
+  - Rooms management ✔✔
   
-  - Rooms management
+  - Accounts management ✔✔
   
-  - Accounts management
+  - Offers management ✔✔
   
-  - Offers management
-  
-  - Income statistics
+  - Income statistics ✔✔
  
 
 
