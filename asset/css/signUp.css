@@ -1,0 +1,75 @@
+:root{
+    --logoColor: #ffe266;
+    --beachColor: #51ACF7;
+    --orangeColor: #FF5B00;
+    --waterColor: #A3D6FF;
+}
+
+html{
+    font-family: 'Baloo Thambi 2', cursive;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+
+
+.text-center{
+    text-align: center;
+}
+
+/* NAVBAR ###########################################3*/
+.navbar{
+    background: #56CCF2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	transition: top 0.3s;
+}
+
+
+.navbar-brand{
+	padding: 0 5px 0 5px;
+	font-weight: bold;
+	letter-spacing: 5px;
+	border: 5px solid var(--logoColor);
+    color: var(--logoColor) !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content{
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    background: #000000aa;
+    color: white;
+
+}
+
+.content h1{
+    color: var(--logoColor);
+    margin-bottom: 30px;
+}
+
+.input{
+    width: 100%;
+    margin-bottom: 20px;
+    background: transparent;
+    border: none;
+    height: 40px;
+    border-bottom: 1px solid #cccccc;
+    outline: none;
+    color: white;
+}
+
+.btn-login{
+    width: 100%;
+    color: black;
+    background: var(--logoColor);
+    margin-top: 20px;
+    border: none;
+}
+
+.btn-login:hover{
+    background: #ffd930;
+    color: black;
+}
