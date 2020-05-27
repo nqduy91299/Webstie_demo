@@ -47,13 +47,6 @@ body{
 	text-align: end;
 }
 
-.button a{
-	border: 1px solid black;
-	padding: 15px 30px;
-	text-decoration: none;
-	background: var(--logoColor);
-	color: black;
-}
 
 .button a:hover{
 	opacity: 0.8;
