@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../fonts/fontawesome-free-5.13.0-web/css/all.css">
     
      <!-- CSS -->
-     <link rel="stylesheet" href="../css/addANewRoom.css">
+     <link rel="stylesheet" href="../css/formAdd.css">
 
     <!--font familly-->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;700&display=swap" rel="stylesheet">
@@ -32,41 +32,32 @@
 
     <div class="container">
         <div class="row justify-content-md-center">
-            <div class="col-lg-6 form-add-new-room">
+            <div class="col-lg-6 form-add">
+                <h1 class="text-center">Add A New Room</h1>
                 <form action="">
-                    <h1 class="text-center">Add a New Room</h1>
-                    <br>
-                    <div class="name">
-                        <label for="roomName">Name of room</label><br>
-                        <input type="text" name="nameOfRoom" id="nameOfRoom">
-                    </div>
-                    <br>
-        
-                    <div class="price">
-                        <label for="price">Price</label><br>
-                        <input type="number" name="priceOfRoom" id="priceOfRoom">
-                        <br><br>
-                    </div>
+                    <label for="roomName">Name of room:</label>
+                    <input type="text" name="nameOfRoom" id="nameOfRoom">
 
-                    <div class="type">
-                        <label for="type">Type of Room</label><br>
-                        <select name="typeOfRoom" id="typeOfRoom">
-                            <option value="Single Room">Single Room</option>
-                            <option value="Deluxe Room">Deluxe Room</option>
-                            <option value="Family Room">Family Room</option>
-                            <option value="Double Room">Double Room</option>
-                        </select>
-                        <br><br>
-                    </div>
+                    <br>
+                    <label for="price">Price:</label>
+                    <input type="number" name="priceOfRoom" id="priceOfRoom">
+
+                    <br>
+                    <label for="type">Type of Room</label>
+                    <select name="typeOfRoom" id="typeOfRoom">
+                        <option value="Single Room">Single Room</option>
+                        <option value="Deluxe Room">Deluxe Room</option>
+                        <option value="Family Room">Family Room</option>
+                        <option value="Double Room">Double Room</option>
+                    </select>
         
+                    <br>
                     <div class="img">
                         <input type="file" name="imgOfRoom" id="imgOfRoom">
-                        <br>
-                        <br>
-                        <br>
                     </div>
 
-                    <div class="button">
+                    <br>
+                    <div class="button text-right">
                         <a class="btn btn-danger" href="#">Cancel</a>
                         <button class="btn btn-success" name="add">Add</button>
                     </div>

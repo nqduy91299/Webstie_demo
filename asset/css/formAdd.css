@@ -1,0 +1,51 @@
+:root{
+	--logoColor: #ffe266;
+	--beachColor: #51ACF7;
+	--orangeColor: #FF5B00;
+	--waterColor: #A3D6FF;
+}
+
+
+
+html{
+	font-family: 'Baloo Thambi 2', cursive;
+	box-sizing: border-box;
+    font-size: 18px;
+    height: 100%;
+}
+
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: end;
+}
+
+.form-add{
+    margin: 50px 0;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    background: #fafafa;
+    box-shadow: 5px 5px 5px #6a6a6a;
+    border-radius: 5px;
+}
+
+.form-add h1{
+    margin-bottom: 25px;
+}
+
+.form-add input{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-add button, .form-add a{
+    margin-top: 15px;
+}
+
+.img{
+    margin-top: 15px;
+}
+
