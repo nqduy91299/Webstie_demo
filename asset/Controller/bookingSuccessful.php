@@ -34,7 +34,7 @@
                     </div>
                     <div class="footer d-flex">
                         <a class="btn btn-success"  href="../../index.php" type="button">OK, back to home</a>
-                        <a class="btn btn-info"  href="../View/aboutUs.php" type="button">Go to see hotel's rule</a>
+                        <a class="btn btn-info"  href="../View/account.php" type="button">Go to see history booking</a>
                     </div>
                 </div>
             </div>
