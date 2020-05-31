@@ -33,32 +33,41 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-lg-6 form-add">
-                <h1 class="text-center">Add A New Room</h1>
-                <form action="">
-                    <label for="roomName">Name of room:</label>
-                    <input type="text" name="nameOfRoom" id="nameOfRoom">
-
+                <form action="addRoom.php" method = "POST" enctype="multipart/form-data">
+                    <h1 class="text-center">Add a New Room</h1>
                     <br>
-                    <label for="price">Price:</label>
-                    <input type="number" name="priceOfRoom" id="priceOfRoom">
-
+                    <div class="name">
+                        <label for="roomName">Name of room</label><br>
+                        <input type="text" name="nameRoom" id="nameRoom">
+                    </div>
                     <br>
-                    <label for="type">Type of Room</label>
-                    <select name="typeOfRoom" id="typeOfRoom">
-                        <option value="Single Room">Single Room</option>
-                        <option value="Deluxe Room">Deluxe Room</option>
-                        <option value="Family Room">Family Room</option>
-                        <option value="Double Room">Double Room</option>
-                    </select>
         
-                    <br>
-                    <div class="img">
-                        <input type="file" name="imgOfRoom" id="imgOfRoom">
+                    <div class="price">
+                        <label for="price">Price</label><br>
+                        <input type="number" name="priceRoom" id="priceRoom">
+                        <br><br>
                     </div>
 
-                    <br>
+                    <div class="type">
+                        <label for="type">Type of Room</label><br>
+                        <select name="typeRoom" id="typeRoom">
+                            <option value="Single Room">Single Room</option>
+                            <option value="Deluxe Room">Deluxe Room</option>
+                            <option value="Family Room">Family Room</option>
+                            <option value="Double Room">Double Room</option>
+                        </select>
+                        <br><br>
+                    </div>
+        
+                    <div class="mb-3">
+					  <label for="fileUpload">Image</label>
+					  <div class="input-group">
+						<input type="file" id="fileUpload" name="fileUpload" required>
+					  </div>
+					</div>
+
                     <div class="button text-right">
-                        <a class="btn btn-danger" href="#">Cancel</a>
+                        <a class="btn btn-danger" href="../Admin/index.php">Cancel</a>
                         <button class="btn btn-success" name="add">Add</button>
                     </div>
                 </form>

@@ -1,3 +1,9 @@
+<?php
+session_start();
+	if(!isset($_SESSION["email"])){
+		header("Location: ../Controller/signIn.php");
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,28 +61,42 @@
     <div class="container">
         <div class="row" style="margin-top: 50px;">
             <div class="col-12" style="display: flex; justify-content: space-between;">
-                <a href="#" class="btn btn-success" style="color: white; padding: 10px 20px;">Back to Home</a>
+                <a href="../../index.php" class="btn btn-success" style="color: white; padding: 10px 20px;">Back to Home</a>
                 <h2>Account</h2>
-                <button class="btn btn-logout">Log out</button>
+                <a href="../Controller/logout.php" class="btn btn-danger" role="button">Log out</a>
             </div>
         </div>
         <div style="background-color: #f1f1f1; box-shadow: 5px 5px 5px #2c2828a1; margin-bottom: 50px; margin-top: 50px; padding: 50px 0;" class="row">
-            <div class="col-lg-6">
+            
+			<div class="col-lg-6">
+			<?php
+						$user = $_SESSION["email"];
+						//echo $_SESSION["email"];
+						require_once("../../conn.php");
+						$sql = "SELECT * FROM account_customer WHERE email='$user'";
+						$result = $conn->query($sql);
+						
+						if($result->num_rows ==1){
+							$row = $result->fetch_assoc();
+							$email = $row["email"];
+						}
+						
+			?>
                 <div class="account_infor">
                     <div class="card text-white bg-dark mb-3">
                         <div class="card-header text-center"><h4>Your Infomation</h4></div>
                         <div class="card-body">
                             <div class="infor">
                                 <p>Your name: </p>
-                                <span>Nguyen Van A</span>
+                                <span><?php echo $row["name"] ?></span>
                             </div>
                             <div class="infor">
                                 <p>Your email:</p>
-                                <span>nguyenvana2092092@gmail.com</span>
+                                <span><?php echo $row["email"] ?></span>
                             </div>
                             <div class="infor">
                                 <p>Your phone:</p>
-                                <span>0258741478</span>
+                                <span><?php echo $row["phone"] ?></span>
                             </div>
                             
                         </div>
@@ -97,11 +117,29 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <td>2/2/2020</td>
-                                    <td>3/2/2020</td>
-                                    <td>R-001</td>
-                                  </tr>
+                                  <?php
+													
+													require_once("../../conn.php");
+													$sql = "SELECT *FROM info
+														WHERE email='$user' ";
+													$result = $conn->query($sql);
+													if ($result->num_rows > 0) {
+														// output data of each row
+														while($row = $result->fetch_assoc()) {
+															
+													
+													?>		
+															<tr >
+															
+																<td><?php echo $row["checkin"]?></td>
+																<td><?php echo $row["checkout"]?></td>
+																<td><?php echo $row["nameRoom"]?></td>
+																
+															</tr>
+													<?php 
+														}
+													}
+													?>
                                 </tbody>
                               </table>
                             </div>

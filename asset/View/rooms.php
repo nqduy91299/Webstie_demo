@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,19 +46,19 @@
         <div class="collapse navbar-collapse justify-content-around align-item-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../Controller/deletebangtam.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="./aboutUs.php">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Rooms</a>
+                    <a class="nav-link active">Rooms</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Promotions</a>
+                    <a class="nav-link" href="./promotions.php">Promotions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Account</a>
+                    <a class="nav-link" href="./account.php">Account</a>
                 </li>
             </ul>
         </div>
@@ -70,167 +74,139 @@
             <div class="col-12 rooms__list">
                 <!-- Deluxe room -->
                 <div class="row room__items">
+					<?php
+						require_once("../../conn.php");
+						$sql = "SELECT * FROM room WHERE type='Deluxe Room'";
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+							// output data of each row
+							while($row = $result->fetch_assoc()) {
+						
+					?>		
                     <div class="col-lg-8">
-                        <a href="#">
-                            <img class="img__room" src="../img/img-delux-room-beachview.jpg" alt="img-delux-room-beachview">
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <h3>Deluxe room with beachview</h3>
-                        <sup>$</sup><strong>200</strong><span>/ per night</span>
-                        <ul>Convenient: 
-                            <li>Beachview <i class="fas fa-umbrella-beach"></i></li>
-                            <li>30m<sup>2</sup></li>
-                            <li>1.8m bed <i class="fas fa-bed"></i></li>
-                            <li>Bathtub <i class="fas fa-bath"></i></li>
-                            <li>Dryer</li>
-                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="#">BOOK THIS</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row room__items">
-                    <div class="col-lg-8">
-                        <a href="#">
-                            <img class="img__room" src="../img/img-delux-room-normalview.jpg" alt="img-delux-room-beachview">
+                        <a href="../Controller/ktCheckin.php">
+                            <img class="img__room" src="../Uploads/<?php echo $row["image"] ?>" alt="img-delux-room-beachview">
                         </a>
                     </div>
                     <div class="col-lg-4">
                         <h3>Deluxe room</h3>
-                        <sup>$</sup><strong>180</strong><span>/ per night</span>
+                        <sup>$</sup><strong><?php echo $row["price"] ?></strong><span>/ per night</span>
                         <ul>Convenient: 
+                            <li>Beachview <i class="fas fa-umbrella-beach"></i></li>
                             <li>30m<sup>2</sup></li>
                             <li>1.8m bed <i class="fas fa-bed"></i></li>
                             <li>Bathtub <i class="fas fa-bath"></i></li>
                             <li>Dryer</li>
-                            <li>air condition</li>
-                            <li>Free toiletries</li>
-                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="#">BOOK THIS</a></li>
+                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="../Controller/ktCheckin.php">BOOK THIS</a></li>
                         </ul>
                     </div>
+					<?php
+							}
+						}
+					?>
                 </div>
+				
 
-                <!-- President room -->
-                <div class="row room__items">
+                <!--  Double room -->
+				<div class="row room__items">
+					<?php
+						require_once("../../conn.php");
+						$sql = "SELECT * FROM room WHERE type='Family Room'";
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+							// output data of each row
+							while($row = $result->fetch_assoc()) {
+						
+					?>		
                     <div class="col-lg-8">
-                        <a href="#">
-                            <img class="img__room" src="../img/img-president-room-beachview.jpg" alt="img-delux-room-beachview">
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <h3>President room with beachview</h3>
-                        <sup>$</sup><strong>300</strong><span>/ per night</span>
-                        <ul>Convenient: 
-                            <li>Beachview <i class="fas fa-umbrella-beach"></i></li>
-                            <li>40m<sup>2</sup></li>
-                            <li>1.8m bed <i class="fas fa-bed"></i></li>
-                            <li>Bathtub <i class="fas fa-bath"></i></li>
-                            <li>Dryer</li>
-                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="#">BOOK THIS</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row room__items">
-                    <div class="col-lg-8">
-                        <a href="#">
-                            <img class="img__room" src="../img/img-president-room-normalview.jpg" alt="img-delux-room-beachview">
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <h3>President room</h3>
-                        <sup>$</sup><strong>280</strong><span>/ per night</span>
-                        <ul>Convenient: 
-                            <li>40m<sup>2</sup></li>
-                            <li>1.8m bed <i class="fas fa-bed"></i></li>
-                            <li>Bathtub <i class="fas fa-bath"></i></li>
-                            <li>Dryer</li>
-                            <li>air condition</li>
-                            <li>Free toiletries</li>
-                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="#">BOOK THIS</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Family Room -->
-                <div class="row room__items">
-                    <div class="col-lg-8">
-                        <a href="#">
-                            <img class="img__room" src="../img/img-family-room-beachview.jpg" alt="img-delux-room-beachview">
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <h3>Family room with beachview</h3>
-                        <sup>$</sup><strong>250</strong><span>/ per night</span>
-                        <ul>Convenient: 
-                            <li>Beachview <i class="fas fa-umbrella-beach"></i></li>
-                            <li>40m<sup>2</sup></li>
-                            <li>1.8m bed <i class="fas fa-bed"></i></li>
-                            <li>Bathtub <i class="fas fa-bath"></i></li>
-                            <li>Dryer</li>
-                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="#">BOOK THIS</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row room__items">
-                    <div class="col-lg-8">
-                        <a href="#">
-                            <img class="img__room" src="../img/img-family-room-normalview.jpg" alt="img-delux-room-beachview">
+                        <a href="../Controller/ktCheckin.php">
+                            <img class="img__room" src="../Uploads/<?php echo $row["image"] ?>" alt="familyDetailRoom">
                         </a>
                     </div>
                     <div class="col-lg-4">
                         <h3>Family room</h3>
-                        <sup>$</sup><strong>230</strong><span>/ per night</span>
-                        <ul>Convenient: 
-                            <li>30m<sup>2</sup></li>
-                            <li>1.8m bed <i class="fas fa-bed"></i></li>
-                            <li>Bathtub <i class="fas fa-bath"></i></li>
-                            <li>Dryer</li>
-                            <li>air condition</li>
-                            <li>Free toiletries</li>
-                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="#">BOOK THIS</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-
-                <!-- Single Room -->
-                <div class="row room__items">
-                    <div class="col-lg-8">
-                        <a href="#">
-                            <img class="img__room" src="../img/img-single-room-beachview.jpg" alt="img-delux-room-beachview">
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <h3>Single room with beachview</h3>
-                        <sup>$</sup><strong>160</strong><span>/ per night</span>
+                        <sup>$</sup><strong><?php echo $row["price"] ?></strong><span>/ per night</span>
                         <ul>Convenient: 
                             <li>Beachview <i class="fas fa-umbrella-beach"></i></li>
                             <li>30m<sup>2</sup></li>
                             <li>1.8m bed <i class="fas fa-bed"></i></li>
                             <li>Bathtub <i class="fas fa-bath"></i></li>
                             <li>Dryer</li>
-                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="#">MORE</a></li>
+                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="../Controller/ktCheckin.php">BOOK THIS</a></li>
                         </ul>
                     </div>
+					<?php
+							}
+						}
+					?>
                 </div>
+
+                <!-- Double Room -->
                 <div class="row room__items">
+					<?php
+						require_once("../../conn.php");
+						$sql = "SELECT * FROM room WHERE type='Double Room'";
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+							// output data of each row
+							while($row = $result->fetch_assoc()) {
+						
+					?>		
                     <div class="col-lg-8">
-                        <a href="#">
-                            <img class="img__room" src="../img/img-single-room-normalview.jpg" alt="img-delux-room-beachview">
+                        <a href="../Controller/ktCheckin.php">
+                            <img class="img__room" src="../Uploads/<?php echo $row["image"] ?>" alt="familyDetailRoom">
                         </a>
                     </div>
                     <div class="col-lg-4">
-                        <h3>Single room</h3>
-                        <sup>$</sup><strong>145</strong><span>/ per night</span>
+                        <h3>Double room</h3>
+                        <sup>$</sup><strong><?php echo $row["price"] ?></strong><span>/ per night</span>
                         <ul>Convenient: 
+                            <li>Beachview <i class="fas fa-umbrella-beach"></i></li>
                             <li>30m<sup>2</sup></li>
                             <li>1.8m bed <i class="fas fa-bed"></i></li>
                             <li>Bathtub <i class="fas fa-bath"></i></li>
                             <li>Dryer</li>
-                            <li>air condition</li>
-                            <li>Free toiletries</li>
-                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="#">MORE</a></li>
+                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="../Controller/ktCheckin.php">BOOK THIS</a></li>
                         </ul>
                     </div>
+					<?php
+							}
+						}
+					?>
+                </div>
+                <!-- Single Room -->
+                
+                <div class="row room__items">
+					<?php
+						require_once("../../conn.php");
+						$sql = "SELECT * FROM room WHERE type='Single Room'";
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+							// output data of each row
+							while($row = $result->fetch_assoc()) {
+						
+					?>		
+                    <div class="col-lg-8">
+                        <a href="../Controller/ktCheckin.php">
+                            <img class="img__room" src="../Uploads/<?php echo $row["image"] ?>" alt="familyDetailRoom">
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Single room</h3>
+                        <sup>$</sup><strong><?php echo $row["price"] ?></strong><span>/ per night</span>
+                        <ul>Convenient: 
+                            <li>Beachview <i class="fas fa-umbrella-beach"></i></li>
+                            <li>30m<sup>2</sup></li>
+                            <li>1.8m bed <i class="fas fa-bed"></i></li>
+                            <li>Bathtub <i class="fas fa-bath"></i></li>
+                            <li>Dryer</li>
+                            <li>Free coffee <i class="fas fa-mug-hot"></i> ... <a href="../Controller/ktCheckin.php">BOOK THIS</a></li>
+                        </ul>
+                    </div>
+					<?php
+							}
+						}
+					?>
                 </div>
             </div>
         </div>
@@ -253,18 +229,18 @@
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 footer__useFul-link">
                     <h6 class="footer-title">Useful link</h4>
                     <div class="link">
-                        <ul class="list-group-flush listgroup-link">
+                    <ul class="list-group-flush listgroup-link">
                             <li class="list-group-item link-item">
-                                <a href="#">About us</a>
+                                <a href="./aboutUs.php">About us</a>
                             </li>
                             <li class="list-group-item link-item">
-                                <a href="#">Roons</a>
+                                <a href="./rooms.php">Roons</a>
                             </li>
                             <li class="list-group-item link-item">
-                                <a href="#">Promotions</a>
+                                <a href="./promotions.php">Promotions</a>
                             </li>
                             <li class="list-group-item link-item">
-                                <a href="#">Account</a>
+                                <a href="./account.php">Account</a>
                             </li>
                         </ul>
                     </div>

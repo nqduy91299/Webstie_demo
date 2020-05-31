@@ -1,9 +1,13 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Sign In</title>
 
     <!--icon-->
     <link rel="shortcut icon" type="icon" href="../img/icon-hotel.png">
@@ -26,28 +30,22 @@
 <body>
     <!--NAVIGATION-->
     <nav class="navbar navbar-expand-xl  navbar-light bg-light " id="navbar">
-        <a class="navbar-brand" href="#">THE PIRATES</a>
+        <a class="navbar-brand" href="../../index.php">THE PIRATES</a>
     </nav>
-
+    
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <a href="#" class="btn btn-success" type="button"  style="margin-top: 20px;">Go Home</a>
+                <a href="../../index.php" class="btn btn-success" type="button" style="margin-top: 20px;">Go Home</a>
             </div>
         </div>
     </div>
+
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-6 content">
-                <h1 class="text-center">Register</h1>
-                <form action="">
-                    <label for="Your name">Your name:</label>
-                    <input class="input" type="text" name="name" id="name">
-
-                    
-                    <label for="Your phone">Your phone:</label>
-                    <input class="input" type="tel" name="phone" id="phone">
-
+                <h1 class="text-center">Log In</h1>
+                <form action="" method="POST">
                     <label for="Email">Email:</label>
                     <input class="input" type="text" name="email" id="email">
 
@@ -56,8 +54,47 @@
                     <input class="input" type="password" name="password" id="password">
 
                     <br>
-                    <button class="btn btn-primary btn-login" type="submit">Register</button>
+                    <input type="checkbox" name="rememberPasw" id="rememberPasw">
+                    <label for="Remember Password">Remember Me</label>
+                    
+                    <br>
+                    <button class="btn btn-primary btn-login" type="submit">Login</button>
+					<?php
+					if (isset($_POST["email"]) && isset($_POST["password"])) {
+						$email = $_POST["email"];
+						$password = $_POST["password"];
+						$sql = "SELECT * FROM account_admin WHERE email = '$email' AND password = '$password'";
+						require_once("../../conn.php");
+						
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+							$_SESSION["email"] = $email;
+							$_SESSION["name"] = $data[0];
+							header("Location: ../Admin/index.php");
+						}else {
+							$email = $_POST["email"];
+							$password = $_POST["password"];
+							$sql = "SELECT * FROM account_customer WHERE email = '$email' AND password = '$password'";
+							require_once("../../conn.php");
+							
+							$result = $conn->query($sql);
+							if ($result->num_rows > 0) {
+								$_SESSION["email"] = $email;
+								$_SESSION["name"] = $data[0];
+								header("Location: ../../index.php");
+							}else{
+								echo "Login faile";
+							}
+						}
+					}
+					?>
+					
                     <hr color="#cccccc">
+                    <p class="text-center">Or login with</p>
+                    <button class="btn btn-success btn-fb">Facebook</button>
+                    <button class="btn btn-success btn-gg">Google</button>
+					
+					<p class="text-center"><a href = "signUp.php">Create a new account</a></p>
                 </form>
             </div>
         </div>

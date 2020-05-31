@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>President Room</title>
+    <title>Deluxe Room</title>
 
     <!--icon-->
     <link rel="shortcut icon" type="icon" href="../../img/icon-hotel.png">
@@ -31,19 +31,19 @@
         <div class="collapse navbar-collapse justify-content-around align-item-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../../Controller/deletebangtam.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="../aboutUs.php">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Rooms</a>
+                    <a class="nav-link" href="../rooms.php">Rooms</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Promotions</a>
+                    <a class="nav-link" href="../promotions.php">Promotions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Account</a>
+                    <a class="nav-link" href="../account.php">Account</a>
                 </li>
             </ul>
         </div>
@@ -51,41 +51,57 @@
 
     <div class="container room-detail">
         <div class="row first-row">
+		<?php
+								
+						if (isset($_GET["id"])) {
+							$id = $_GET["id"];
+							require_once("../../../conn.php");
+							$sql = "SELECT * FROM room WHERE id = $id";
+							$result = $conn->query($sql);
+							if ($result->num_rows == 1) {
+								$row = $result->fetch_assoc();
+							
+								
+							}
+					}
+		?>
             <div class="col-lg-8 col-12 room-name">
-                <h2 id="typeOfRoom">President Room</h2>
-                <span>Room: </span><span id="nameOfRoom">R-401</span>
+                <h2 id="typeOfRoom">Double Room</h2>
+                <span>Room: </span><span id="nameOfRoom"><?php echo $row["name"] ?></span>
                 <hr>
-                <img id="imgOfRoom" src="../../img/img-president-room-index.jpg" alt="img-president-room">
+                <img id="imgOfRoom" src="../../Uploads/<?php echo $row["image"] ?>"alt="img-deluxe-room">
             </div>
             <div class="col-lg-4 col-12 book-this-room">
-                <button onclick="return confirm('You want to book this room?');">Book This Room</button>
+                <a href="../../Controller/booking.php?id=<?php echo $row["id"] ?>" class="btn button-link-book" type="button">Book This Room</a>
                 <hr>
                 <p class="desc_title">Price</p>
                     <ul>
-                        <li id="priceOfRoom"><sup>$</sup>145</li>
+                        <li id="priceOfRoom"><sup>$</sup><?php echo $row["price"] ?></li>
                     </ul>
                 <p class="desc_title">Main detail</p>
                 <ul>
-                    <li>Limit 4 people</li>
-                    <li>2 beds 2m</li>
+                    <li>Limit 3 people</li>
+                    <li>2m bed</li>
                     <li>Big bathroom</li>
-                    <li>Look like penhouse</li>
+                    <li>Clean room</li>
                 </ul>
                 <p class="desc_title">Room area</p>
                 <ul>
-                    <li>60 m<sup>2</sup></li>
+                    <li>40 m<sup>2</sup></li>
                 </ul>
             </div>
+			<?php
+
+			?>
         </div>
         <div class="row">
             <div class="col-12 description">
                 <hr>
                 <p class="desc_title">Discription</p>
                 <p id="description">
-                    This room is suitable for group friend (limit 4 people) or bussinessman or family. 
-                    Luxurious interior. it has a large area. 
-                    You will experience the most advanced facilities 
-                    and services of our hotel.
+                    This room is suitable for couples and children (limit 2 children), or 3 people. 
+                    Luxurious interiors, affordable rooms. 
+                    Very suitable for businessmen, boss, 
                     This is a quite spacious room, clean and tidy room, 
                     creating excitement when you have the opportunity to 
                     travel and experience our services.The room is full of 
@@ -95,15 +111,15 @@
                 <p class="desc_title">Convenient</p>
                 <div class="d-flex">
                     <ul>
-                        <li>Playstation 4</li>
-                        <li>2 Bathup</li>
+                        <li>Dryer</li>
+                        <li>Bathup</li>
                         <li>Fan</li>
                         <li>Air conditioner</li>
                         <li>Sandals for customer</li>
                         <li>Electric water boiling kettle</li>
                     </ul>
                     <ul>
-                        <li>Luxury interior</li>
+                        <li>Extra bed (1.6 m)</li>
                         <li>High speed wifi</li>
                         <li>Televison</li>
                         <li>Netflix</li>
@@ -111,64 +127,9 @@
                         <li>Personal hygiene tools (as gift)</li>
                     </ul>
                 </div>
-                <div class="d-flex" style="justify-content: space-between;">
-                    <p class="desc_title">Another rooms maybe you like</p> 
-                    <a href="#" class="btn btn-success" type="button">Choose another room</a>
-                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="card shadow rooms-card__items">
-                    <div class="scale-img">
-                        <img class="card-img-top" src="../../img/img-family-room-index.jpg" alt="Single Room">
-                    </div>
-                    <div class="card-body card-rooms-body">
-                        <h5 class="card-title">FAMILY ROOM </h5>
-                        <div class="card-rooms-body__price">
-                            <span>from</span>
-                            <sup>$</sup>
-                            <span style="font-weight: 400; font-size: 50px;">75</span>
-                            <span>/ per night</span>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <div class="col-lg-4">
-                <div class="card shadow rooms-card__items">
-                    <div class="scale-img">
-                        <img class="card-img-top" src="../../img/img-single-room-index.jpg" alt="Single Room">
-                    </div>
-                    <div class="card-body card-rooms-body">
-                        <h5 class="card-title">SINGLE ROOM </h5>
-                        <div class="card-rooms-body__price">
-                            <span>from</span>
-                            <sup>$</sup>
-                            <span style="font-weight: 400; font-size: 50px;">60</span>
-                            <span>/ per night</span>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <div class="col-lg-4">
-                <div class="card shadow rooms-card__items">
-                    <div class="scale-img">
-                        <img class="card-img-top" src="../../img/img-delux-room-index.jpg" alt="Single Room">
-                    </div>
-                    <div class="card-body card-rooms-body">
-                        <h5 class="card-title">DELUXE ROOM </h5>
-                        <div class="card-rooms-body__price">
-                            <span>from</span>
-                            <sup>$</sup>
-                            <span style="font-weight: 400; font-size: 50px;">70</span>
-                            <span>/ per night</span>
-                        </div>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </div>
-
+        
     <!-- FOOTER -->
     <footer>
         <div class="footer-footer container-fluid d-flex justify-content-around py-3 footer__row-copyright">

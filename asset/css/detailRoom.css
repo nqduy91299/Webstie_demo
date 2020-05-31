@@ -82,19 +82,20 @@ body{
     padding: 15px 15px 0;
 }
 
-.book-this-room button{
+.button-link-book{
     padding: 10px;
-    outline: none;
     background: var(--beachColor);
     color: white;
     border: 1px solid white;
     border-radius: 5px;
-    width: 100%;;
-    cursor: pointer;
+    width: 100%;
     margin-bottom: 30px;
+    outline: none;
 }
 
-.book-this-room button:hover{
+
+
+.button-link-book:hover{
     background: var(--logoColor);
     color: black;
 }

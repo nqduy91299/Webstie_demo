@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +57,7 @@
                             <a class="nav-link" href="#contact-us">CONTACT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./asset/Controller/signIn_Up.html">ACCOUNT</a>
+                            <a class="nav-link" href="asset/view/account.php">ACCOUNT</a>
                         </li>
                     </ul>
                 </div>
@@ -75,28 +78,29 @@
                         <h1>The Pirates <span style="color: (--beachColor);">A Luxury Hotel</span></h1>
                         <p>Here are the best hotel booking sites, including recommendations for international
                         travel and for finding low-priced hotel rooms.</p>
-                        <a class="button" href="#" style="transform: 3s;">Discover Now <i id="arrow-down-discover" style="margin-left: 20px;" class="fas fa-long-arrow-alt-down"></i> </a>
+                        <a class="button" href="#submitForm" style="transform: 3s;">Discover Now <i id="arrow-down-discover" style="margin-left: 20px;" class="fas fa-long-arrow-alt-down"></i> </a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="homePage__formRegister">
                         <h3>Booking Your Hotel</h3>
-                        <form action="" method="">
+                        <form action="asset/Controller/addCheckin.php" method="POST">
                             <div class="form__check-date">
                                 <label for="check-in">Check in:</label>
-                                <input class="datePicker" type="text" name="check-in" id="check-in-date-id" placeholder="dd/mm/yy" required>
+                                <input class="datePicker" type="text" name="checkIn" id="check-in-date-id" placeholder="dd/mm/yy" required>
+                                
                             </div>
                             <div class="form__check-date">
                                 <label for="check-out">Check out:</label>
-                                <input class="datePicker" type="text" name="check-out" id="check-out-date-id" placeholder="dd/mm/yy" required>
+                                <input class="datePicker" type="text" name="checkOut" id="check-out-date-id" placeholder="dd/mm/yy" required>
                             </div>
                             <div class="form__number">
                                 <label for="guests">Guests:</label>
-                                <input type="number" id="number-guests" name="number-guests" value="1" min="1" max="30" required>
+                                <input type="number" id="number-guests" name="guest" value="1" min="1" max="30" required>
                             </div>
                             <div class="form__number">
                                 <label for="rooms">Rooms:</label>
-                                <input type="number" id="number-rooms" name="number-rooms" value="1" min="1" max="10" required>
+                                <input type="number" id="number-rooms" name="room" value="1" min="1" max="5" required>
                             </div>
                             <button class="button" id="submitForm" type="submit">Check Availability</button>
                         </form>
@@ -119,7 +123,7 @@
                             <p>So when it comes to booking the perfect hotel, vacation rental, resort, apartment, guest house, or tree house, we’ve got you covered.</p>
                         </div>
                         <div class="readmore">
-                            <a href="#" class="button">See Detail</a>
+                            <a href="./asset/View/aboutUs.php" class="button">See Detail</a>
                         </div>
                     </div>
                 </div>
@@ -203,7 +207,7 @@
                             <img class="card-img-top" src="./asset/img/img-president-room-index.jpg" alt="Single Room">
                         </div>
                         <div class="card-body card-rooms-body">
-                            <h5 class="card-title">PRESIDENT ROOM </h5>
+                            <h5 class="card-title">DOUBLE ROOM </h5>
                             <div class="card-rooms-body__price">
                                 <span>from</span>
                                 <sup>$</sup>
@@ -217,13 +221,13 @@
 
             <div class="row justify-content-md-center row__btnShowMore">
                 <div class="col-lg-6 showmore">
-                        <a href="#">Show all rooms</a>
+                        <a href="asset/View/rooms.php">Show all rooms</a>
                 </div>
             </div>
         </div>
 
         <!-- PROMOTIONS ####################################### -->
-        <div class="container-fluid promotion" style="background: url('./asset/img/img-bg2.jpg');">
+        <div class="container-fluid promotion" id="promotions" style="background: url('./asset/img/img-bg2.jpg');">
             <div class="container">
                 <div class="row row-promotions__title">
                     <div class="col-lg-12 promotions-title">
@@ -244,7 +248,6 @@
                                 <div class="script-promotions">
                                     <span>Come to our hotel on weekdays, you will receive a discount of up to 10%.</span>
                                 </div>
-                                <a id="" href="#" class="button">See Detail</a>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">From Monday to Friday every week</small>
@@ -265,7 +268,6 @@
                                         buffet there are many dishes from Asia to Europe 
                                         for only $ 15 per person.</p>
                                 </div>
-                                <a id="" href="#" class="button">See Detail</a>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">From Monday to Sunday</small>
@@ -286,7 +288,6 @@
                                         those services will be discounted up to 20% if you
                                         use them every Thursday.</p>
                                 </div>
-                                <a id="" href="#" class="button">See Detail</a>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">From Thursday every week</small>
@@ -296,7 +297,7 @@
                 </div>
                 <div class="row justify-content-md-center row__btnShowMore">
                     <div class="col-lg-6 showmore">
-                            <a href="#">Show all Specials</a>
+                            <a href="./asset/View/promotions.php">Show all Specials</a>
                     </div>
                 </div>
             </div>
@@ -441,16 +442,16 @@
                         <div class="link">
                             <ul class="list-group-flush listgroup-link">
                                 <li class="list-group-item link-item">
-                                    <a href="#superContainer__desc">About us</a>
+                                    <a href="./asset/View/aboutUs.php">About us</a>
                                 </li>
                                 <li class="list-group-item link-item">
-                                    <a href="#superContainer__rooms">Roons</a>
+                                    <a href="./asset/View/rooms.php">Roons</a>
                                 </li>
                                 <li class="list-group-item link-item">
-                                    <a href="#superContainer__promotions">Promotions</a>
+                                    <a href="./asset/View/promotions.php">Promotions</a>
                                 </li>
                                 <li class="list-group-item link-item">
-                                    <a href="./asset/Controller/signIn_Up.php">Account</a>
+                                    <a href="./asset/Controller/signIn.php">Account</a>
                                 </li>
                             </ul>
                         </div>

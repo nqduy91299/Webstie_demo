@@ -42,19 +42,19 @@
         <div class="collapse navbar-collapse justify-content-around align-item-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../../index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="./aboutUs.php">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Rooms</a>
+                    <a class="nav-link " href="./rooms.php">Rooms</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Promotions</a>
+                    <a class="nav-link active">Promotions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Account</a>
+                    <a class="nav-link" href="./account.php">Account</a>
                 </li>
             </ul>
         </div>
@@ -69,7 +69,7 @@
         </div>
         <div class="row" style="margin-bottom: 50px;">
             <div class="col-lg-6">
-                <div class="card shadow promotions-card__items">
+                <div id="offer01" class="card shadow promotions-card__items">
                     <div class="scale-img">
                         <img class="card-img-top" src="../img/img-promotion-booking.jpg" alt="Booking offer">
                     </div>
@@ -167,16 +167,16 @@
                     <div class="link">
                         <ul class="list-group-flush listgroup-link">
                             <li class="list-group-item link-item">
-                                <a href="#">About us</a>
+                                <a href="./aboutUs.php">About us</a>
                             </li>
                             <li class="list-group-item link-item">
-                                <a href="#">Roons</a>
+                                <a href="./rooms.php">Roons</a>
                             </li>
                             <li class="list-group-item link-item">
-                                <a href="#">Promotions</a>
+                                <a href="./promotions.php">Promotions</a>
                             </li>
                             <li class="list-group-item link-item">
-                                <a href="#">Account</a>
+                                <a href="./account.php">Account</a>
                             </li>
                         </ul>
                     </div>

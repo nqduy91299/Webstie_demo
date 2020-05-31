@@ -31,19 +31,19 @@
         <div class="collapse navbar-collapse justify-content-around align-item-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../../Controller/deletebangtam.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="../aboutUs.php">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Rooms</a>
+                    <a class="nav-link" href="../rooms.php">Rooms</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Promotions</a>
+                    <a class="nav-link" href="../promotions.php">Promotions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Account</a>
+                    <a class="nav-link" href="../account.php">Account</a>
                 </li>
             </ul>
         </div>
@@ -51,18 +51,32 @@
 
     <div class="container room-detail">
         <div class="row first-row">
+		<?php
+								
+						if (isset($_GET["id"])) {
+							$id = $_GET["id"];
+							require_once("../../../conn.php");
+							$sql = "SELECT * FROM room WHERE id = $id";
+							$result = $conn->query($sql);
+							if ($result->num_rows == 1) {
+								$row = $result->fetch_assoc();
+							
+								
+							}
+					}
+		?>
             <div class="col-lg-8 col-12 room-name">
                 <h2 id="typeOfRoom">Deluxe Room</h2>
-                <span>Room: </span><span id="nameOfRoom">R-201</span>
+                <span>Room: </span><span id="nameOfRoom"><?php echo $row["name"] ?></span>
                 <hr>
-                <img id="imgOfRoom" src="../../img/img-delux-room-index.jpg" alt="img-deluxe-room">
+                <img id="imgOfRoom" src="../../Uploads/<?php echo $row["image"] ?>"alt="img-deluxe-room">
             </div>
             <div class="col-lg-4 col-12 book-this-room">
-                <button onclick="return confirm('You want to book this room?');">Book This Room</button>
+				<a href="../../Controller/booking.php?id=<?php echo $row["id"] ?>" class="btn button-link-book" type="button">Book This Room</a>
                 <hr>
                 <p class="desc_title">Price</p>
                     <ul>
-                        <li id="priceOfRoom"><sup>$</sup>145</li>
+                        <li id="priceOfRoom"><sup>$</sup><?php echo $row["price"] ?></li>
                     </ul>
                 <p class="desc_title">Main detail</p>
                 <ul>
@@ -76,6 +90,10 @@
                     <li>40 m<sup>2</sup></li>
                 </ul>
             </div>
+			<?php
+					
+				
+			?>
         </div>
         <div class="row">
             <div class="col-12 description">
@@ -110,60 +128,6 @@
                         <li>Personal hygiene tools (as gift)</li>
                     </ul>
                 </div>
-                <div class="d-flex" style="justify-content: space-between;">
-                    <p class="desc_title">Another rooms maybe you like</p> 
-                    <a href="#" class="btn btn-success" type="button">Choose another room</a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="card shadow rooms-card__items">
-                    <div class="scale-img">
-                        <img class="card-img-top" src="../../img/img-president-room-index.jpg" alt="Single Room">
-                    </div>
-                    <div class="card-body card-rooms-body">
-                        <h5 class="card-title">PRESIDENT ROOM </h5>
-                        <div class="card-rooms-body__price">
-                            <span>from</span>
-                            <sup>$</sup>
-                            <span style="font-weight: 400; font-size: 50px;">80</span>
-                            <span>/ per night</span>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <div class="col-lg-4">
-                <div class="card shadow rooms-card__items">
-                    <div class="scale-img">
-                        <img class="card-img-top" src="../../img/img-single-room-index.jpg" alt="Single Room">
-                    </div>
-                    <div class="card-body card-rooms-body">
-                        <h5 class="card-title">SINGLE ROOM </h5>
-                        <div class="card-rooms-body__price">
-                            <span>from</span>
-                            <sup>$</sup>
-                            <span style="font-weight: 400; font-size: 50px;">60</span>
-                            <span>/ per night</span>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <div class="col-lg-4">
-                <div class="card shadow rooms-card__items">
-                    <div class="scale-img">
-                        <img class="card-img-top" src="../../img/img-family-room-index.jpg" alt="Single Room">
-                    </div>
-                    <div class="card-body card-rooms-body">
-                        <h5 class="card-title">FAMILY ROOM </h5>
-                        <div class="card-rooms-body__price">
-                            <span>from</span>
-                            <sup>$</sup>
-                            <span style="font-weight: 400; font-size: 50px;">75</span>
-                            <span>/ per night</span>
-                        </div>
-                    </div>
-                </div>  
             </div>
         </div>
     </div>

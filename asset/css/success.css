@@ -1,0 +1,31 @@
+:root{
+	--logoColor: #ffe266;
+	--beachColor: #51ACF7;
+	--orangeColor: #FF5B00;
+	--waterColor: #A3D6FF;
+}
+
+html{
+	font-family: 'Baloo Thambi 2', cursive;
+	box-sizing: border-box;
+    font-size: 22px;
+}
+
+i{
+    font-size: 100px;
+    text-align: center;
+    color: lawngreen;
+}
+
+.table-modal{
+	margin-top: 100px;
+	padding: 20px;
+	border: 1px solid #1f1f1f;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #A3D6FF;
+}
+
+
+.footer{
+    justify-content: space-between;
+}
